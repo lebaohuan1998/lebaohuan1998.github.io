@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // ===== Play Music Button =====
 document.addEventListener("DOMContentLoaded", function () {
   const music = document.getElementById("bgMusic");
+  const btn = document.getElementById("playMusic");
 
   function fadeInAudio(audio, duration = 2000) {
     audio.volume = 0;
@@ -84,23 +85,30 @@ document.addEventListener("DOMContentLoaded", function () {
     music.muted = false;
     music.play().then(() => {
       fadeInAudio(music, 2000);
+      btn.innerHTML = "<i class='fa fa-volume-up'></i>";
     }).catch(err => console.log("Không thể phát:", err));
   }
 
-  // Tương tác đầu tiên
-  function firstInteraction() {
+  // Chỉ cần touchstart lần đầu
+  function firstTouch() {
     playMusic();
-    document.removeEventListener("click", firstInteraction);
-    document.removeEventListener("scroll", firstInteraction);
-    document.removeEventListener("touchstart", firstInteraction);
-    document.removeEventListener("keydown", firstInteraction);
+    document.removeEventListener("touchstart", firstTouch);
   }
 
-  document.addEventListener("click", firstInteraction);
-  document.addEventListener("scroll", firstInteraction);
-  document.addEventListener("touchstart", firstInteraction);
-  document.addEventListener("keydown", firstInteraction);
+  document.addEventListener("touchstart", firstTouch);
+
+  // Nút bật/tắt
+  btn.addEventListener("click", function () {
+    if (music.paused) {
+      playMusic();
+    } else {
+      music.pause();
+      btn.innerHTML = "<i class='fas fa-volume-mute'></i>";
+    }
+  });
 });
+
+
 
 
 
