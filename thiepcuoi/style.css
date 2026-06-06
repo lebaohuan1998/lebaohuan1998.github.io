@@ -1,0 +1,448 @@
+/* ===== Body ===== */
+body {
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background: 
+    linear-gradient(to bottom, rgba(224,247,250,0.6), rgba(178,235,242,0.6)), 
+    url('1.jpg'); /* ảnh nền + lớp phủ gradient */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* ===== Header ===== */
+header {
+  text-align: center;
+  background: #fff;        /* nền trắng */
+  color: #4db6ac;          /* chữ xanh ngọc để nổi bật */
+  padding: 20px;
+  border-bottom: 5px solid gold;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3em;
+  margin: 3px 0;
+  color: #4db6ac;          /* tên cô dâu chú rể màu đỏ sang trọng */
+}
+
+header p {
+  font-family: 'Playfair Display', serif;
+  font-size: 2em;
+  margin: 10px 0;
+  color: #4db6ac;          
+}
+
+
+/* ===== Section ===== */
+section {
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px auto;
+  max-width: 900px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+h2 {
+  color: #00796b;
+  border-bottom: 2px solid gold;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+/* ===== Album ===== */
+.album {
+text-align: center;
+
+}
+.album-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.album-grid img {
+  width: 45%;
+  margin: 5px;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  box-shadow: 0 0 15px #A9A9A9;
+  transition: transform 0.5s, box-shadow 0.5s, filter 0.5s;
+}
+
+.album-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Iframe ===== */
+iframe {
+  width: 100%;
+  height: 300px;
+  border: 3px solid #4db6ac;
+  border-radius: 10px;
+}
+
+/* ===== List ===== */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 8px 0;
+  font-size: 1.1em;
+}
+
+/* ===== Form ===== */
+form input, form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+form button {
+  background: #4db6ac;
+  color: #fff;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #00796b;
+}
+
+#confirmation {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #00796b;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  background: #fff;
+  color: #4db6ac;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* ===== Wedding Info ===== */
+.wedding-info {
+  text-align: center;
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 900px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.wedding-info::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.7); /* lớp phủ trắng mờ */
+  z-index: 0;
+}
+
+.wedding-info * {
+  position: relative;
+}
+
+.parents-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.parents-block {
+  width: 40%;
+  background: #f9f9f9;
+  border: 2px solid #4db6ac;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.announcement {
+  margin: 20px 0;
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #b22222;
+  background: #fff3e0;
+  border: 2px solid gold;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.couple {
+  font-size: 1.2em;
+  margin: 20px 0;
+  color: #00796b;
+}
+
+.ceremony-info {
+  margin-top: 20px;
+  font-size: 1.1em;
+}
+
+/* ===== Reception Info ===== */
+.reception-info {
+  text-align: center;
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 900px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.reception-info h2 {
+  color: #00796b;
+  border-bottom: 2px solid gold;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.reception-info .announcement {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.reception-info .announcement .time {
+  font-size: 2em;
+  color: #00796b;
+  margin: 10px 0;
+}
+
+.schedule {
+  font-size: 1.1em;
+  margin: 15px 0;
+}
+
+.calendar {
+  margin-top: 20px;
+  display: inline-block;
+  background: #f9f9f9;
+  border: 2px solid #4db6ac;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.calendar .month {
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #00796b;
+}
+
+.calendar .days span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  margin: 5px;
+  border-radius: 50%;
+  background: #eee;
+}
+
+.calendar .days .highlight {
+  background: #b22222;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(178,34,34,0.8);
+}
+
+/* ===== Reception Location ===== */
+.reception-location {
+  text-align: center;
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 900px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.reception-location h2 {
+  color: #00796b;
+  font-size: 1.8em;
+  margin-bottom: 5px;
+}
+
+.reception-location .subtitle {
+  font-size: 1.2em;
+  color: #00796b;
+  margin-bottom: 20px;
+}
+
+.location-info {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.map iframe {
+  width: 100%;
+  height: 350px;
+  border: 3px solid #4db6ac;
+  border-radius: 10px;
+}
+.guestbook{
+text-align: center;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #4db6ac;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: background 0.3s, opacity 0.3s;
+  opacity: 0; /* ẩn mặc định */
+  z-index: 999; /* đảm bảo nằm trên cùng */
+}
+
+#backToTop:hover {
+  background: #00796b;
+}
+
+
+.hearts {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.hearts span {
+  position: absolute;
+  bottom: 0;
+  font-size: 2em;
+  animation: floatHeart 12s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+  opacity: 0.9;
+}
+
+/* Animation mượt hơn */
+@keyframes floatHeart {
+  0%   { transform: translateY(0) scale(1) rotate(0deg); opacity: 0.9; }
+  20%  { transform: translateY(-120px) scale(1.05) rotate(10deg); opacity: 1; }
+  50%  { transform: translateY(-240px) scale(1) rotate(-10deg); opacity: 0.8; }
+  80%  { transform: translateY(-360px) scale(0.95) rotate(5deg); opacity: 0.6; }
+  100% { transform: translateY(-480px) scale(0.9) rotate(0deg); opacity: 0; }
+}
+
+#playMusic {
+  position: fixed;       /* luôn hiển thị dù cuộn trang */
+  bottom: 20px;          /* cách mép dưới 20px */
+  left: 20px;           /* cách mép phải 20px */
+  background: #4db6ac;   /* màu nền xanh ngọc */
+  color: white;          /* icon trắng */
+  border: none;          /* bỏ viền */
+  width: 50px;           /* chiều rộng nút */
+  height: 50px;          /* chiều cao nút */
+  border-radius: 50%;    /* bo tròn thành hình tròn */
+  cursor: pointer;       /* hiện bàn tay khi hover */
+  font-size: 1.5em;      /* cỡ icon lớn */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* đổ bóng */
+  z-index: 999;          /* nằm trên cùng */
+  transition: background 0.3s, transform 0.2s;
+}
+
+#playMusic:hover {
+  background: #388e7d;
+  transform: scale(1.1);
+}
+
+.guestbook div {
+  background: #f9f9f9;              /* nền sáng nhẹ */
+  padding: 15px 20px;               /* khoảng cách trong */
+  margin: 20px 0;                   /* khoảng cách ngoài */
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #333;                      /* chữ màu tối dễ đọc */
+  border-radius: 8px;               /* bo tròn góc */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* bóng nhẹ */
+  text-align: center;               /* căn giữa nội dung */
+}
+
+.guestbook div strong {
+  color: #000000;                   /* nhấn mạnh chữ "Lời Cám ơn" */
+  font-size: 1.3em;
+}
+
+.calendar {
+  width: 400px;
+  margin: 40px auto;
+  background: #fdf6f0;
+  border: 2px solid #e0c9a6;
+  border-radius: 12px;
+  padding: 20px;
+  font-family: 'Playfair Display', serif;
+  color: #5a4633;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.weekdays, .days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.days div {
+  padding: 8px;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.days div:hover {
+  background: #e0f2f1;
+}
+
+.special {
+  position: relative;
+  margin: auto;
+}
+
+.special svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  animation: pulse 1.5s infinite;
+}
+
+.special span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+/* Animation pulse */
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
