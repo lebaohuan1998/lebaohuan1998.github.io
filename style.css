@@ -125,20 +125,34 @@ form button:hover {
 
 /* ===== Footer ===== */
 footer {
+  background: linear-gradient(135deg, #fdf6f0, #fce4ec);
+  padding: 30px;
   text-align: center;
-  background: #fff;
-  color: #4db6ac;
-  padding: 20px;
-  margin-top: 20px;
+  border-top: 3px solid #e0c9a6;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
 }
+
+footer p {
+  font-size: 2em;
+  font-family: 'Dancing Script', cursive;
+  color: #5a4633;
+  margin: 0;
+  animation: fadeInUp 2s ease;
+}
+
+/* Hiệu ứng chữ xuất hiện */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
 
 /* ===== Wedding Info ===== */
 .wedding-info {
   text-align: center;
   background: #fff;
   border-radius: 15px;
-  padding: 30px;
-  margin: 20px auto;
+  padding: 25px;
   max-width: 900px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   position: relative;
@@ -146,7 +160,6 @@ footer {
 
 .wedding-info::before {
   content: "";
-  position: absolute;
   inset: 0;
   background: rgba(255,255,255,0.7);
   z-index: 0;
@@ -199,8 +212,7 @@ footer {
   text-align: center;
   background: #fff;
   border-radius: 15px;
-  padding: 30px;
-  margin: 20px auto;
+  padding: 25px;
   max-width: 900px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
@@ -266,8 +278,7 @@ footer {
   text-align: center;
   background: #fff;
   border-radius: 15px;
-  padding: 30px;
-  margin: 20px auto;
+  padding: 25px;
   max-width: 900px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
@@ -388,16 +399,6 @@ footer {
   transform: scale(1.1);
 }
 
-/* Responsive cho điện thoại */
-@media (max-width: 480px) {
-  #playMusic {
-    width: 70px;       /* tăng kích thước */
-    height: 70px;
-    font-size: 2em;    /* icon to hơn */
-    bottom: 15px;      /* chỉnh khoảng cách */
-    left: 15px;
-  }
-}
 /* ===== Guestbook ===== */
 .guestbook {
   text-align: center;
@@ -421,9 +422,10 @@ footer {
   font-size: 1.3em;
 }
 
-/* ===== Calendar ===== */
+/* Calendar mặc định */
 .calendar {
-  width: 400px;
+  max-width: 400px;   /* thay vì width cố định */
+  width: 100%;        /* cho phép co giãn */
   margin: 40px auto;
   background: #fdf6f0;
   border: 2px solid #e0c9a6;
@@ -459,7 +461,7 @@ footer {
 
 .special svg {
   width: 100%;
-  height: 100%;
+  height: auto; /* cho phép co theo khung */
   display: block;
   animation: pulse 1.5s infinite;
 }
@@ -474,78 +476,38 @@ footer {
   font-size: 1em;
 }
 
+/* Responsive cho tablet */
+@media (max-width: 768px) {
+  .calendar {
+    max-width: 95%;
+    padding: 15px;
+  }
+  .calendar h2 {
+    font-size: 1.5em;
+  }
+  .weekdays div, .days div {
+    padding: 6px;
+    font-size: 0.9em;
+  }
+}
+
+/* Responsive cho điện thoại nhỏ */
+@media (max-width: 480px) {
+  .calendar {
+    padding: 10px;
+  }
+  .calendar h2 {
+    font-size: 1.2em;
+  }
+  .weekdays div, .days div {
+    padding: 4px;
+    font-size: 0.8em;
+  }
+}
+
+
 @keyframes pulse {
   0%   { transform: scale(1); }
   50%  { transform: scale(1.15); }
   100% { transform: scale(1); }
-}
-/* ===== Responsive ===== */
-@media (max-width: 1024px) {
-  header h1 {
-    font-size: 2.5em;
-  }
-  header p {
-    font-size: 1.5em;
-  }
-  .parents-block {
-    width: 45%;
-    margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2em;
-  }
-  header p {
-    font-size: 1.2em;
-  }
-  section {
-    padding: 15px;
-    margin: 10px;
-  }
-  .parents-container {
-    flex-direction: column;
-    align-items: center;
-  }
-  .parents-block {
-    width: 90%;
-    margin-bottom: 20px;
-  }
-  .album-grid img {
-    width: 90%;
-  }
-  .calendar {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1.5em;
-  }
-  header p {
-    font-size: 1em;
-  }
-  h2 {
-    font-size: 1.2em;
-  }
-  .album-grid img {
-    width: 100%;
-    margin: 5px 0;
-  }
-  .calendar .days span {
-    width: 30px;
-    height: 30px;
-    line-height: 30px;
-    font-size: 0.8em;
-  }
-  form input,
-  form textarea {
-    font-size: 0.9em;
-  }
-  form button {
-    font-size: 1em;
-    padding: 10px 20px;
-  }
 }

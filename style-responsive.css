@@ -1,0 +1,85 @@
+/* Tablet */
+@media (max-width: 1024px) {
+  header h1 { font-size: 2.5em; text-align: center; }
+  header p { font-size: 1.5em; text-align: center; }
+
+  .parents-block {
+    width: 45%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .album-grid {
+    justify-content: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  header h1 { font-size: 2em; text-align: center; }
+  header p { font-size: 1.2em; text-align: center; }
+
+  section { padding: 15px; margin: 10px; }
+
+  .parents-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .parents-block {
+    width: 90%;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  /* .album-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .album-grid img {
+    width: 100%;
+    margin: 5px 0;
+  } */
+
+  .calendar {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #playMusic, #backToTop {
+    width: 70px !important;
+    height: 70px !important;
+    font-size: 2em !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Điện thoại nhỏ */
+@media (max-width: 480px) {
+  header h1 { font-size: 1.5em; text-align: center; }
+  header p { font-size: 1em; text-align: center; }
+  h2 { font-size: 1.2em; text-align: center; }
+
+  form input, form textarea {
+    font-size: 0.9em;
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  form button {
+    font-size: 1em;
+    padding: 10px 20px;
+    display: block;
+    margin: 10px auto;
+  }
+
+  footer p {
+    text-align: center;
+  }
+}
