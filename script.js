@@ -68,15 +68,29 @@ document.addEventListener("DOMContentLoaded", function () {
   const btn = document.getElementById("playMusic");
   const music = document.getElementById("bgMusic");
 
+  // Khi click nút phát nhạc
   btn.addEventListener("click", function () {
     if (music.paused || music.muted) {
       music.muted = false;
       music.play().then(() => {
-        btn.textContent = "🔊"; // icon bật tiếng
+        btn.innerHTML = "<i class='fa fa-volume-up'></i>"; // icon bật tiếng
       }).catch(err => console.log("Không thể phát:", err));
     } else {
       music.pause();
-      btn.textContent = "🔇"; // icon tắt tiếng
+      btn.innerHTML = "<i class='fas fa-volume-mute'></i>"; // icon tắt tiếng
     }
   });
+
+  // Khi click lần đầu vào bất kỳ chỗ nào trên trang
+  document.addEventListener("click", function firstClick() {
+    if (music.paused || music.muted) {
+      music.muted = false;
+      music.play().then(() => {
+        btn.innerHTML = "<i class='fa fa-volume-up'></i>";
+      }).catch(err => console.log("Không thể phát:", err));
+    }
+    // Sau khi phát nhạc thì bỏ listener để không gọi lại nhiều lần
+    document.removeEventListener("click", firstClick);
+  });
 });
+

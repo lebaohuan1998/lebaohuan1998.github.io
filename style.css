@@ -125,7 +125,7 @@ form button:hover {
 
 /* ===== Footer ===== */
 footer {
-  background: linear-gradient(135deg, #fdf6f0, #fce4ec);
+  background: linear-gradient(135deg, #fff, #fff);
   padding: 30px;
   text-align: center;
   border-top: 3px solid #e0c9a6;
