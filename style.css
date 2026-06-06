@@ -65,12 +65,24 @@ h2 {
   border-radius: 10px;
   border: 1px solid #fff;
   box-shadow: 0 0 15px #A9A9A9;
-  transition: transform 0.5s, box-shadow 0.5s, filter 0.5s;
+  opacity: 0;
+  transition: all 1.5s ease; /* tốc độ hiển thị chậm hơn */
 }
 
-.album-grid img:hover {
-  transform: scale(1.05);
+/* Ẩn ban đầu */
+.from-left {
+  transform: translateX(-100px); /* dịch sang trái */
 }
+.from-right {
+  transform: translateX(100px);  /* dịch sang phải */
+}
+
+/* Khi hiện */
+.show {
+  opacity: 1;
+  transform: translateX(0); /* về đúng vị trí */
+}
+
 
 /* ===== Iframe ===== */
 iframe {
@@ -510,4 +522,13 @@ footer p {
   0%   { transform: scale(1); }
   50%  { transform: scale(1.15); }
   100% { transform: scale(1); }
+}
+.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1.5s ease;
+}
+.show {
+  opacity: 1;
+  transform: translateY(0);
 }

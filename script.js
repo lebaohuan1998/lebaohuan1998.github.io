@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     img.style.opacity = 0;
     img.style.transform = "translateY(30px)";
     setTimeout(() => {
-      img.style.transition = "opacity 1s ease, transform 1s ease";
+      img.style.transition = "opacity 2s ease, transform 2s ease";
       img.style.opacity = 1;
       img.style.transform = "translateY(0)";
     }, index * 300); // hiệu ứng lần lượt từng ảnh
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const heartsContainer = document.querySelector(".hearts");
   const emojis = ["❤️", "💖"];
 
-  for (let i = 0; i < 30; i++) {
+  for (let i = 0; i < 15; i++) {
     const heart = document.createElement("span");
     heart.textContent = emojis[Math.floor(Math.random() * emojis.length)];
 
@@ -108,8 +108,44 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const elements = document.querySelectorAll('.hidden');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target); // chỉ chạy 1 lần
+      }
+    });
+  });
+
+  elements.forEach(el => observer.observe(el));
+});
 
 
+document.addEventListener("DOMContentLoaded", function () {
+  const images = document.querySelectorAll('.album-grid img');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target); // chỉ chạy 1 lần cho mỗi ảnh
+      }
+    });
+  }, { threshold: 0.2 }); // khi 20% ảnh vào viewport thì hiện
+
+  images.forEach((img, index) => {
+    // xen kẽ: ảnh chẵn từ trái, ảnh lẻ từ phải
+    if (index % 2 === 0) {
+      img.classList.add('from-left');
+    } else {
+      img.classList.add('from-right');
+    }
+    observer.observe(img);
+  });
+});
 
 
 
