@@ -1,4 +1,5 @@
-document.getElementById("rsvpForm").addEventListener("submit", function(event) {
+// ===== RSVP Form =====
+document.getElementById("rsvpForm").addEventListener("submit", function (event) {
   event.preventDefault();
 
   const name = document.getElementById("guestName").value;
@@ -14,6 +15,8 @@ document.getElementById("rsvpForm").addEventListener("submit", function(event) {
 
   document.getElementById("rsvpForm").reset();
 });
+
+// ===== Album Animation =====
 document.addEventListener("DOMContentLoaded", () => {
   const images = document.querySelectorAll(".album-grid img");
   images.forEach((img, index) => {
@@ -26,19 +29,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }, index * 300); // hiệu ứng lần lượt từng ảnh
   });
 });
+
+// ===== Back To Top Button =====
 document.addEventListener("DOMContentLoaded", function () {
   const btn = document.getElementById("backToTop");
 
-  // Hiện nút khi cuộn xuống
   window.addEventListener("scroll", function () {
-    if (window.scrollY > 300) {
-      btn.style.opacity = "1";
-    } else {
-      btn.style.opacity = "0";
-    }
+    btn.style.opacity = window.scrollY > 300 ? "1" : "0";
   });
 
-  // Cuộn mượt lên đầu trang khi click
   btn.addEventListener("click", function () {
     window.scrollTo({
       top: 0,
@@ -46,32 +45,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// ===== Hearts Animation =====
 document.addEventListener("DOMContentLoaded", function () {
   const heartsContainer = document.querySelector(".hearts");
-  const emojis = ["❤️","💖"];
+  const emojis = ["❤️", "💖"];
 
   for (let i = 0; i < 30; i++) {
     const heart = document.createElement("span");
     heart.textContent = emojis[Math.floor(Math.random() * emojis.length)];
 
-    // vị trí ngẫu nhiên
     heart.style.left = `${Math.random() * window.innerWidth}px`;
-
-    // delay ngẫu nhiên để bay so le
     heart.style.animationDelay = `${Math.random() * 6}s`;
-
-    // kích thước ngẫu nhiên
     heart.style.fontSize = `${Math.random() * 2 + 1}em`;
 
     heartsContainer.appendChild(heart);
   }
 });
 
+// ===== Play Music Button =====
 document.addEventListener("DOMContentLoaded", function () {
   const btn = document.getElementById("playMusic");
   const music = document.getElementById("bgMusic");
 
-  // phát nhạc khi click nút
   btn.addEventListener("click", function () {
     if (music.paused || music.muted) {
       music.muted = false;
