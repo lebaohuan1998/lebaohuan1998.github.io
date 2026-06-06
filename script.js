@@ -65,32 +65,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ===== Play Music Button =====
 document.addEventListener("DOMContentLoaded", function () {
-  const btn = document.getElementById("playMusic");
   const music = document.getElementById("bgMusic");
 
-  // Khi click nút phát nhạc
-  btn.addEventListener("click", function () {
-    if (music.paused || music.muted) {
-      music.muted = false;
-      music.play().then(() => {
-        btn.innerHTML = "<i class='fa fa-volume-up'></i>"; // icon bật tiếng
-      }).catch(err => console.log("Không thể phát:", err));
-    } else {
-      music.pause();
-      btn.innerHTML = "<i class='fas fa-volume-mute'></i>"; // icon tắt tiếng
-    }
-  });
+  function fadeInAudio(audio, duration = 2000) {
+    audio.volume = 0;
+    let step = 0.05;
+    let interval = duration / (1 / step);
+    let fade = setInterval(() => {
+      if (audio.volume < 1) {
+        audio.volume = Math.min(1, audio.volume + step);
+      } else {
+        clearInterval(fade);
+      }
+    }, interval);
+  }
 
-  // Khi click lần đầu vào bất kỳ chỗ nào trên trang
-  document.addEventListener("click", function firstClick() {
-    if (music.paused || music.muted) {
-      music.muted = false;
-      music.play().then(() => {
-        btn.innerHTML = "<i class='fa fa-volume-up'></i>";
-      }).catch(err => console.log("Không thể phát:", err));
-    }
-    // Sau khi phát nhạc thì bỏ listener để không gọi lại nhiều lần
-    document.removeEventListener("click", firstClick);
-  });
+  function playMusic() {
+    music.muted = false;
+    music.play().then(() => {
+      fadeInAudio(music, 2000);
+    }).catch(err => console.log("Không thể phát:", err));
+  }
+
+  // Tương tác đầu tiên
+  function firstInteraction() {
+    playMusic();
+    document.removeEventListener("click", firstInteraction);
+    document.removeEventListener("scroll", firstInteraction);
+    document.removeEventListener("touchstart", firstInteraction);
+    document.removeEventListener("keydown", firstInteraction);
+  }
+
+  document.addEventListener("click", firstInteraction);
+  document.addEventListener("scroll", firstInteraction);
+  document.addEventListener("touchstart", firstInteraction);
+  document.addEventListener("keydown", firstInteraction);
 });
+
+
+
+
 
