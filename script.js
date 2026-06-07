@@ -173,37 +173,3 @@ const timer = setInterval(function() {
     countdownEl.innerHTML = "<h2>Ngày trọng đại đã đến!</h2>";
   }
 }, 1000);
-
-
-document.addEventListener("DOMContentLoaded", function() {
-  const form = document.getElementById("rsvpForm");
-
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const name = document.getElementById("guestName").value.trim();
-    const message = document.getElementById("message").value.trim();
-
-    fetch("/rsvp", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: `guestName=${encodeURIComponent(name)}&message=${encodeURIComponent(message)}`
-    })
-    .then(res => res.text())
-    .then(data => {
-      // Tạo thông báo ở góc trên bên phải
-      const container = document.getElementById("notification-container");
-      const successMsg = document.createElement("div");
-      successMsg.textContent = data;
-
-      container.appendChild(successMsg);
-
-      // Reset form sau khi gửi
-      form.reset();
-
-      // Tự động ẩn thông báo sau 3 giây
-      setTimeout(() => successMsg.remove(), 3000);
-    })
-    .catch(err => console.error(err));
-  });
-});
