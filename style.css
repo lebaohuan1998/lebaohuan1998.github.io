@@ -640,19 +640,25 @@ footer p {
 }
 
 /* Responsive cho mobile */
+/* Responsive cho mobile */
 @media (max-width: 480px) {
   .popup-content {
-    width: 70%;
-    margin: 20% auto;
+    width: 90%;          /* gần full màn hình */
+    margin: 25% auto;    /* cách trên nhiều hơn */
     padding: 15px;
   }
   .popup-content h2 {
-    font-size: 22px;
+    font-size: 20px;     /* nhỏ hơn để vừa màn hình */
   }
   #closePopup {
-    font-size: 32px;
+    font-size: 32px;     /* vẫn to, dễ bấm */
   }
   .qr-img {
-    max-width: 220px;
+    max-width: 90%;      /* chiếm gần hết chiều ngang */
+    height: auto;
+  }
+  .popup-content div {
+    font-size: 16px;
   }
 }
+
