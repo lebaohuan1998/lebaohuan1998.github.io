@@ -167,6 +167,28 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+// Ngày cưới: 25/07/2026 lúc 10:00
+const eventDate = new Date("July 25, 2026 10:00:00").getTime();
+const countdownEl = document.getElementById("countdown");
 
+const timer = setInterval(function() {
+  const now = new Date().getTime();
+  const distance = eventDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  countdownEl.innerHTML = `
+    <h2>Đếm ngược tới ngày cưới</h2>
+    <p>${days} ngày ${hours} giờ ${minutes} phút ${seconds} giây</p>
+  `;
+
+  if (distance < 0) {
+    clearInterval(timer);
+    countdownEl.innerHTML = "<h2>Ngày trọng đại đã đến!</h2>";
+  }
+}, 1000);
 
 

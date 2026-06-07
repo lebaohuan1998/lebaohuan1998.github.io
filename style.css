@@ -662,3 +662,23 @@ footer p {
   }
 }
 
+#countdown {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  max-width: 400px;
+}
+
+#countdown h2 {
+  color: #ff4d4d;
+  margin-bottom: 10px;
+}
+
+#countdown p {
+  font-size: 20px;
+  color: #333;
+}
