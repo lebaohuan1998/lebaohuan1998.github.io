@@ -708,40 +708,84 @@ footer p {
 
 .container {
   display: flex;
-  justify-content: center;   /* Căn giữa theo chiều ngang */
-  align-items: center;       /* Căn giữa theo chiều dọc */
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   gap: 50px;
-  flex-wrap: wrap;           /* Cho phép card xuống dòng khi không đủ chỗ */
-  text-align: center;        /* Căn giữa nội dung text bên trong */
 }
 
 .card {
-  width: 200px;
-  height: 300px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 15px;
-  text-align: center;        /* Căn giữa chữ bên trong card */
-  text-decoration: none;
+  width: 500px;
+  height: 250px;
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
   color: #333;
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
   display: flex;
-  justify-content: center;   /* Căn giữa nội dung theo chiều ngang */
-  align-items: center;       /* Căn giữa nội dung theo chiều dọc */
-  transition: transform 0.3s;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Playfair Display', serif;
+  animation: swing 2s infinite ease-in-out;
+  overflow: hidden;
 }
 
-.card:hover {
-  transform: scale(1.05);
+/* Nắp phong thư ở nửa trên */
+.card::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%); /* dịch để cân giữa */
+  width: 0;
+  height: 0;
+  border-left: 250px solid transparent;   /* nửa chiều rộng card */
+  border-right: 250px solid transparent;
+  border-top: 120px solid #f9f9f9;        /* tam giác hướng lên */
+  z-index: 2;
+}
+
+
+
+
+/* Họa tiết trang trí */
+.card::after {
+  content: "✿ ✿ ✿";
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  color: #aaa;
+  letter-spacing: 10px;
+}
+.card-content {
+  position: relative;
+  z-index: 3; /* cao hơn nắp thư */
 }
 
 .bride {
   border: 3px solid pink;
+  background: linear-gradient(135deg, #fff 70%, rgba(255,182,193,0.2));
 }
 
 .groom {
   border: 3px solid lightblue;
+  background: linear-gradient(135deg, #fff 70%, rgba(173,216,230,0.2));
 }
+
+/* Hiệu ứng lắc lư */
+@keyframes swing {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-3deg); }
+  100% { transform: rotate(0deg); }
+}
+
+
+
 
 /* Responsive cho màn hình nhỏ hơn 768px */
 @media (max-width: 768px) {
