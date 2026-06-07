@@ -153,11 +153,12 @@
 Ngày hạnh phúc của chúng mình sẽ càng ý nghĩa hơn khi có hiện diện của gia đình, bạn bè và những người thân yêu. Xin chân thành cảm ơn và trân quý tình cảm ấy!
 </div>
 <div>
-<form id="rsvpForm">
-      <input type="text" id="guestName" style="font-family: 'Playfair Display', serif;" placeholder="Tên khách mời" required>
-      <textarea id="message" style="font-family: 'Playfair Display', serif;" placeholder="Lời chúc"></textarea>
-      <button type="submit">Gửi</button>
-    </form>
+<form id="rsvpForm" action="/rsvp" method="POST">
+  <input type="text" style="font-family: 'Playfair Display', serif;" name="guestName" id="guestName" placeholder="Tên khách mời" required>
+  <textarea name="message" id="message" placeholder="Lời chúc" style="font-family: 'Playfair Display', serif;"></textarea>
+  <button type="submit">Gửi</button>
+</form>
+
 </div>
     
   </section>
@@ -180,6 +181,7 @@ Ngày hạnh phúc của chúng mình sẽ càng ý nghĩa hơn khi có hiện d
   </div>
   </div>
 </div>
+<div id="notification-container"></div>
   <!-- Footer -->
   <footer>
   </footer>

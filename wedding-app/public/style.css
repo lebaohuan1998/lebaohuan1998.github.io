@@ -30,6 +30,28 @@ header p {
   margin: 10px 0;
   color: #4db6ac;
 }
+header {
+  animation: slideDown 1s forwards;
+}
+
+/* Hiệu ứng trượt xuống + mờ dần */
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Nếu muốn lung linh hơn, thêm glow */
+
+header p {
+  animation: fadeIn 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 
 /* ===== Section ===== */
 section {
@@ -682,3 +704,42 @@ footer p {
   font-size: 20px;
   color: #333;
 }
+#notification-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* Thông báo lung linh */
+#notification-container div {
+  background: linear-gradient(135deg, #d4edda, #c3f5c3, #a8e6cf);
+  color: #155724;
+  padding: 12px 24px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.25), 0 0 20px rgba(168, 230, 207, 0.6);
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateX(100%);
+  animation: slideIn 0.5s forwards, fadeOut 0.5s 2.5s forwards;
+}
+
+/* Animation xuất hiện */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animation biến mất */
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
