@@ -643,7 +643,7 @@ footer p {
 /* Responsive cho mobile */
 @media (max-width: 480px) {
   .popup-content {
-    width: 90%;          /* gần full màn hình */
+    width: 80%;          /* gần full màn hình */
     margin: 25% auto;    /* cách trên nhiều hơn */
     padding: 15px;
   }
