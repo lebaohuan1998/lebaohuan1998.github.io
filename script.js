@@ -147,6 +147,26 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("luckymoney");
+  const popup = document.getElementById("qrPopup");
+  const closeBtn = document.getElementById("closePopup");
+
+  btn.addEventListener("click", () => {
+    popup.classList.add("show");
+  });
+
+  closeBtn.addEventListener("click", () => {
+    popup.classList.remove("show");
+  });
+
+  // Đóng pop-up khi click ra ngoài
+  window.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.classList.remove("show");
+    }
+  });
+});
 
 
 
