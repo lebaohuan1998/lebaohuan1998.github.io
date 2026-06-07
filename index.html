@@ -3,180 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thiệp Cưới Huân & Hà</title>
+  <title>Wedding App</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="style-responsive.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Dancing+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="couple-img"></div>
-    <h1>Bảo Huân & Việt Hà</h1>
-    <p>SAVE The DATE</p>
-    <p>25/07/2026</p>
-  </header>
+  <div class="container">
+    <!-- Thiệp cô dâu -->
+    <a href="codau.html" class="card bride">
+      <h2>Thiệp Cô Dâu</h2>
+    </a>
 
-  <!-- Album Ảnh Cưới -->
-  <section class="album hidden">
-    <h2 >ẢNH CƯỚI CỦA TỤI MÌNH</h2>
-    <div class="album-grid">
-      <img src="11.jpg" alt="Ảnh cưới 1">
-      <img src="2.jpg" alt="Ảnh cưới 2">
-      <img src="3.jpg" alt="Ảnh cưới 3">
-      <img src="4.jpg" alt="Ảnh cưới 4">
-    </div>
-    <div class="album-grid">
-      <img src="5.jpg" alt="Ảnh cưới 5">
-      <img src="6.jpg" alt="Ảnh cưới 6">
-      <img src="12.jpg" alt="Ảnh cưới 7">
-      <img src="8.jpg" alt="Ảnh cưới 8">
-    </div>
-  </section>
-
-  <!-- Thông Tin Lễ Cưới -->
-  <section class="wedding-info hidden" >
-    <h2>THÔNG TIN LỄ CƯỚI</h2>
-
-    <!-- Cha mẹ hai bên -->
-    <div class="parents-container">
-      <div class="parents-block">
-	<h2>Nhà Trai</h2>
-        <p><strong>BỐ: LÊ BẢO TUYẾN</strong></p>
-        <p><strong>MẸ: NGUYỄN THỊ HƯỜNG</strong></p>
-	<p><strong>CHÚ RỂ: LÊ BẢO HUÂN</strong></p>
-        <p>Xóm Quang Trung, Xã Hải Quang, Tỉnh Ninh Bình</p>
-      </div>
-
-      <div class="parents-block">
-	<h2>Nhà Gái</h2>
-        <p><strong>BỐ: NGUYỄN QUYẾT TIẾN</strong></p>
-        <p><strong>MẸ: PHẠM THỊ ĐÀO</strong></p>
-        <p><strong>CÔ DÂU: NGUYỄN VIỆT HÀ</strong></p>
-        <p>Xóm Quang Bắc, Xã Hải Quang, Tỉnh Ninh Bình</p>
-      </div>
-    </div>
-
-    <!-- Trân trọng báo tin -->
-    <div class="announcement">
-      <p><strong>TRÂN TRỌNG KÍNH MỜI</strong></p>
-      <p>TỚI DỰ  LỄ THÀNH HÔN</p>
-    </div>
-
-    <!-- Cô dâu chú rể -->
-    <div class="couple">
-      <p><strong>LÊ BẢO HUÂN</strong></p>
-      <p>&</p>
-      <p><strong>NGUYỄN VIỆT HÀ</strong></p>
-    </div>
-
-    <!-- Thông tin lễ -->
-    <div class="ceremony-info">
-      <p><strong>Lễ thành hôn được cử hành tại:</strong> Tư Gia Nhà Trai</p>
-      <p><strong>Thời gian:</strong> 14:00 Thứ Bảy, 25/07/2026</p>
-      <p>(Tức ngày 12/06 năm Bính Ngọ)</p>
-    </div>
-  </section>
-
-  <!-- Thông Tin Tiệc Cưới -->
-  <section class="reception-info hidden">
-    <h2>THÔNG TIN TIỆC CƯỚI</h2>
-
-    <div class="announcement">
-      <p><strong>TIỆC CƯỚI SẼ DIỄN RA VÀO LÚC:</strong></p>
-      <p class="time">10:00</p>
-      <p><strong>Thứ Bảy | 25 | Tháng 07 | 2026</strong></p>
-      <p>(Tức ngày 12/06 năm Bính Ngọ)</p>
-    </div>
-
-    <!-- Calendar hiển thị ngày nổi bật -->
-    <div class="calendar">
-      <h2>Tháng 7 / 2026</h2>
-  <div class="weekdays">
-    <div>T2</div>
-    <div>T3</div>
-    <div>T4</div>
-    <div>T5</div>
-    <div>T6</div>
-    <div>T7</div>
-    <div>CN</div>
+    <!-- Thiệp chú rể -->
+    <a href="chure.html" class="card groom">
+      <h2>Thiệp Chú Rể</h2>
+    </a>
   </div>
-  <div class="days">
-    <div></div><div></div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
-    <div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div>
-    <div>13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div>
-    <div>20</div><div>21</div><div>22</div><div>23</div><div>24</div>
-    <div class="special">
-      <svg viewBox="0 0 34 30" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-        <!-- Trái tim -->
-        <path d="M23.6,0c-2.9,0-5.4,1.7-6.6,4.1C15.8,1.7,13.3,0,10.4,0C4.7,0,0,4.7,0,10.4
-                c0,9.1,16.9,18.6,16.9,18.6S33.8,19.5,33.8,10.4C33.8,4.7,29.1,0,23.6,0z"
-              fill="#ffc0cb"/>
-        <!-- Số 25 nằm giữa trái tim -->
-        <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle"
-              fill="black" font-size="15" >25</text>
-      </svg>
-    </div>
-    <div>26</div><div>27</div><div>28</div><div>29</div><div>30</div><div>31</div>
-  </div>
-    </div>
-    <div id="countdown"></div>
-  </section>
-
-  <!-- Địa điểm tiệc cưới -->
-  <section class="reception-location hidden">
-    <h2>TIỆC CƯỚI SẼ TỔ CHỨC TẠI</h2>
-    <div class="location-info">
-      <p><strong>Tư Gia Nhà Trai</strong></p>
-      <p>Xóm Quang Trung, xã Hải Quang, tỉnh Ninh Bình</p>
-    </div>
-
-    <!-- Google Maps nhúng với tích đỏ tại tọa độ chính xác -->
-    <div class="map">
-      <iframe 
-        src="https://www.google.com/maps?q=20.168174,106.323802&hl=vi&z=15&output=embed"
-        width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy">
-      </iframe>
-    </div>
-  </section>
-
-  <!-- Sổ Điện Bài -->
-  <section class="guestbook hidden" >
-    <h2>LỜI CẢM ƠN</h2>
-<div class="album-grid">
-      <img src="13.jpg" alt="Ảnh cưới 1">
-      <img src="14.jpg" alt="Ảnh cưới 2">
-    </div>
-<div style="font-family: 'Playfair Display', serif;">
-Ngày hạnh phúc của chúng mình sẽ càng ý nghĩa hơn khi có hiện diện của gia đình, bạn bè và những người thân yêu. Xin chân thành cảm ơn và trân quý tình cảm ấy!
-</div>
-    
-  </section>
-<audio id="bgMusic" src="wd.mp3" autoplay loop muted></audio>
-<button id="playMusic" class="music-btn"><i class='fas fa-volume-mute'></i></button>
-<button id="backToTop"><i class='fas fa-angle-double-up'></i></button>
-<!-- Nút cố định -->
-<button id="luckymoney"><i class="fa fa-envelope"></i></button>
-
-<!-- Pop-up QR code -->
-<div id="qrPopup" class="popup">
-  <div class="popup-content">
-    <span id="closePopup">&times;</span>
-    <h2 style="font-family: 'Playfair Display', serif;">Gửi Mừng Cưới</h2>
-    <div >
-          <img src="qr.jpg" alt="QR Code" class="qr-img" >
-    </div>
-    <div style="font-family: 'Playfair Display', serif;">
-      Hi Hi!
-  </div>
-  </div>
-</div>
-  <!-- Footer -->
-  <footer>
-  </footer>
-<div class="hearts"></div>
-  <script src="script.js"></script>
 </body>
 </html>

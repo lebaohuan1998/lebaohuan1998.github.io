@@ -706,3 +706,64 @@ footer p {
 }
 
 
+.container {
+  display: flex;
+  justify-content: center;   /* Căn giữa theo chiều ngang */
+  align-items: center;       /* Căn giữa theo chiều dọc */
+  height: 100vh;
+  gap: 50px;
+  flex-wrap: wrap;           /* Cho phép card xuống dòng khi không đủ chỗ */
+  text-align: center;        /* Căn giữa nội dung text bên trong */
+}
+
+.card {
+  width: 200px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  text-align: center;        /* Căn giữa chữ bên trong card */
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;   /* Căn giữa nội dung theo chiều ngang */
+  align-items: center;       /* Căn giữa nội dung theo chiều dọc */
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.bride {
+  border: 3px solid pink;
+}
+
+.groom {
+  border: 3px solid lightblue;
+}
+
+/* Responsive cho màn hình nhỏ hơn 768px */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;  /* Xếp card theo cột */
+    gap: 20px;
+    height: auto;            /* Cho phép cuộn thay vì chiếm toàn màn hình */
+  }
+
+  .card {
+    width: 80%;              /* Card chiếm 80% chiều ngang màn hình */
+    height: 200px;
+  }
+}
+
+/* Responsive cho màn hình rất nhỏ (điện thoại dưới 480px) */
+@media (max-width: 480px) {
+  .card {
+    width: 70%;             /* Card chiếm toàn bộ chiều ngang */
+    height: 180px;
+    font-size: 1rem;
+    margin-top: 40%;         /* Căn giữa card trên điện thoại */
+  }
+}
+
