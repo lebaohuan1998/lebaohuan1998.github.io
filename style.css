@@ -807,7 +807,7 @@ footer p {
     width: 70%;             /* Card chiếm toàn bộ chiều ngang */
     height: 180px;
     font-size: 1rem;
-    margin-top: 40%;         /* Căn giữa card trên điện thoại */
+    margin-top: 20%;         /* Căn giữa card trên điện thoại */
   }
 }
 
