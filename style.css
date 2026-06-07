@@ -758,7 +758,6 @@ footer p {
   transform: translateX(-50%);
   font-size: 18px;
   color: #aaa;
-  letter-spacing: 10px;
 }
 .card-content {
   position: relative;
@@ -767,12 +766,10 @@ footer p {
 
 .bride {
   border: 3px solid pink;
-  background: linear-gradient(135deg, #fff 70%, rgba(255,182,193,0.2));
 }
 
 .groom {
   border: 3px solid lightblue;
-  background: linear-gradient(135deg, #fff 70%, rgba(173,216,230,0.2));
 }
 
 /* Hiệu ứng lắc lư */
@@ -811,3 +808,8 @@ footer p {
   }
 }
 
+.card-content a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block; /* giúp link có vùng click rõ ràng */
+}
